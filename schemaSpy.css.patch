@@ -1,0 +1,6 @@
+158,162d157
+< /* don't display the diagrams until we know what to display */
+< .diagram {
+<   display: none;
+< }
+< 

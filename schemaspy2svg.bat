@@ -8,15 +8,15 @@ dot -O -Tsvg %~s1\diagrams\summary\*.dot
 
 rem Fix the URLs in SVG files
 for %%i in (%~s1\diagrams\summary\*.svg) do (
-    perl -p -i.bak -e "s#^^^&lt;a xlink:href=\&quot;#^&lt;a target=\&quot;_top\&quot; xlink:href=\&quot;../../#g&quot; %%i
+    perl -p -i.bak -e "s#^^^<a xlink:href=\"#^<a target=\"_top\" xlink:href=\"../../#g" %%i
 )
 for %%i in (%~s1\diagrams\*.svg) do (
-    perl -p -i.bak -e &quot;s#^^^&lt;a xlink:href=\&quot;#^&lt;a target=\&quot;_top\&quot; xlink:href=\&quot;../tables/#g&quot; %%i
+    perl -p -i.bak -e "s#^^^<a xlink:href=\"#^<a target=\"_top\" xlink:href=\"../tables/#g" %%i
 )
 
 rem Refer to SVG instead of PNG images in HTML files
 for %%i in (%~s1\*.html) do (
-    perl -p -i.bak -e &quot;s#<img>#$7#g" %%i
+    perl -p -i.bak -e "s#<img>#$7#g" %%i
 )
 for %%i in ("%~s1\tables\*.html") do (
     perl -p -i.bak -e "s#<img>#$7#g" %%i

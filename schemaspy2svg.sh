@@ -129,7 +129,6 @@ do
     case $1 in
         -h|--help)
             usage
-            exit
             ;;
         -v|--verbose)
             verbose='--verbose'

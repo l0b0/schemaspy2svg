@@ -4,11 +4,11 @@
 #        schemaspy2svg.sh - Use SVG graphics for SchemaSpy
 #
 # SYNOPSIS
-#        schemaspy2svg.sh [OPTION]... DIRECTORY
+#        schemaspy2svg.sh [OPTION]... DIRECTORY...
 #
 # DESCRIPTION
 #        Generates SVG files from the source .dot files and replaces the URLs in
-#        the markup
+#        the markup.
 #
 #        -h, --help
 #               display this information and quit

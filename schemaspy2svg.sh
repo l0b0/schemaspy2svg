@@ -38,6 +38,8 @@ set -o noclobber
 cmdname="$(basename -- "$0")"
 directory="$(dirname -- "$0")"
 
+patch_path="${directory}/schemaSpy.css.patch"
+
 # Exit codes from /usr/include/sysexits.h, as recommended by
 # http://www.faqs.org/docs/abs/HTML/exitcodes.html
 EX_USAGE=64       # command line usage error
@@ -174,7 +176,7 @@ do
     done
 
     verbose_echo "Undo silly hiding CSS"
-    patch -p0 "${path}/schemaSpy.css" < "${directory}/schemaSpy.css.patch"
+    patch -p0 "${path}/schemaSpy.css" < "$patch_path"
 
     verbose_echo "Clean up backup files and no longer needed PNG / DOT files"
     rm -- ${path}/diagrams/*.png ${path}/diagrams/summary/*.png
